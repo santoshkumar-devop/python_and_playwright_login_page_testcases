@@ -1,4 +1,5 @@
 import json
+import datetime
 import pytest
 from playwright.sync_api import sync_playwright
 
@@ -59,3 +60,15 @@ def test_data(config):
     """Load test data from JSON file"""
     from utils.test_utils import TestUtils
     return TestUtils.load_test_data(config.get("test_data_path", "./data/test_data.json"))
+
+@pytest.fixture(scope="function")
+def context_with_video(request, browser):
+    """Fixture to create a browser context with video recording named after the test case."""
+    suite_name = "login_test_suite"
+    test_name = request.node.name
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    video_dir = f"videos/{suite_name}_{test_name}_{timestamp}/"
+    
+    context = browser.new_context(record_video_dir=video_dir)
+    yield context
+    context.close()

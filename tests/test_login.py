@@ -1,4 +1,5 @@
 import pytest
+import datetime
 from pages.login_page import LoginPage
 
 
@@ -6,8 +7,9 @@ class TestLogin:
     """Test class for login functionality"""
 
     @pytest.mark.parametrize("credentials", ["valid_credentials"])
-    def test_valid_login(self, page, test_data, credentials):
+    def test_valid_login(self, context_with_video, test_data, credentials):
         """Test login with valid credentials"""
+        page = context_with_video.new_page()
         login_page = LoginPage(page)
         
         # Navigate to the login page
@@ -31,8 +33,9 @@ class TestLogin:
                 assert False, f"Login failed with valid credentials {username}/{password}"
 
     @pytest.mark.parametrize("credentials", ["invalid_credentials"])
-    def test_invalid_login(self, page, test_data, credentials, config):
+    def test_invalid_login(self, context_with_video, test_data, credentials, config):
         """Test login with invalid credentials"""
+        page = context_with_video.new_page()
         login_page = LoginPage(page)
         
         # Navigate to the login page
