@@ -12,6 +12,7 @@ The framework includes:
 4. **Cross-Browser Support:** Tests can run on Chromium, Firefox, and WebKit browsers using Playwright's capabilities.
 5. **Reporting**: Test results are generated in HTML format (reports/test_report.html) for easy analysis.
 6. **Error Handling**: Robust error handling and screenshot capture for failed test cases ensure better debugging and traceability.
+7. **Video Recording**: Automatically records test executions for better traceability and debugging. Videos are saved in the test-results folder by default.
 
 To Execute the Testcases, Follow the below steps
 1. Clone the repo
