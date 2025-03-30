@@ -1,0 +1,30 @@
+{
+    "valid_credentials": [
+        {
+            "username": "rahulshettyacademy",
+            "password": "learning"
+        }
+    ],
+    "invalid_credentials": [
+        {
+            "username": "invalid_user",
+            "password": "invalid_pass",
+            "error_message": "Incorrect username/password."
+        },
+        {
+            "username": "rahulshettyacademy",
+            "password": "invalid_pass",
+            "error_message": "Incorrect username/password."
+        },
+        {
+            "username": "invalid_user",
+            "password": "learning",
+            "error_message": "Incorrect username/password."
+        },
+        {
+            "username": "",
+            "password": "",
+            "error_message": "Empty username/password."
+        }
+    ]
+}

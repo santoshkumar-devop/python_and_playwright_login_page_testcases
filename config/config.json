@@ -1,0 +1,5 @@
+{
+    "base_url": "https://rahulshettyacademy.com/loginpagePractise/",
+    "screenshot_path": "./screenshots",
+    "test_data_path": "./data/test_data.json"
+}
